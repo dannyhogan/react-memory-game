@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;800&family=Roboto+Mono:wght@500;700&display=swap");
+.MemoryGame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../assets/bg.jpg");
+  background-size: cover;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-family: "Roboto Mono";
+  h1, h2 {
+    text-shadow: 0px 0px 5px black;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  h3 {
+    width: 8rem;
+    padding: 1rem;
+    background-color: rgba(20, 20, 20, 0.5);
+    border-radius: 20px;
+  }
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
