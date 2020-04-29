@@ -1,0 +1,114 @@
+.MemoryItems {
+  max-width: 90vw;
+  width: 50rem;
+  height: auto;
+
+  .MemoryItems-container {
+    height: 90%;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
+    padding: 0;
+    list-style: none;
+    margin: 1rem auto;
+
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      position: relative;
+      background-color: rgba(32, 32, 32, 0.5);
+      border: 2px solid black;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 10rem;
+      height: 10rem;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        pointer-events: none;
+        object-fit: cover;
+      }
+
+      p {
+        bottom: 25%;
+        font-weight: 800;
+        font-size: 2rem;
+        transform: rotateY(180deg);
+        position: absolute;
+      }
+    }
+
+    .hidden {
+      transition: 1s;
+      transform: rotateY(180deg);
+
+      p {
+        transition: 0.5s;
+        opacity: 1;
+      }
+
+      img {
+        animation-fill-mode: forwards;
+        animation: fade-out;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        opacity: 0;
+      }
+    }
+
+    .visible {
+      border: 2px solid white;
+
+      p {
+        transition: 0.5s;
+        opacity: 0;
+      }
+      img {
+        animation-fill-mode: forwards;
+        animation: fade-in;
+        animation-timing-function: ease-in;
+        animation-duration: 1s;
+      }
+    }
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .MemoryItems {
+    .MemoryItems-container {
+      li {
+        width: 4rem;
+        height: 4rem;
+        p {
+          bottom: -5%;
+        }
+
+      }
+    }
+  }
+}
